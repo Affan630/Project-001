@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice IT - group-page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #F6F6F7;
+        }
+
+        .sidebar {
+            background-color: white;
+            height: 100vh;
+            padding: 20px;
+            margin-top: 1%;
+            border-radius: 30px;
+        }
+
+        .sidebar h4 {
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .form-select {
+            border-radius: 10px;
+        }
+
+        .create-btn {
+            background-color: #6f42c1;
+            border: none;
+            color: white;
+            border-radius: 50px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .create-btn:hover {
+            background-color: #5a34a5;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .navbar-custom {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom .navbar-brand img {
+            width: 50px;
+        }
+
+        .navbar-custom .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 250px;
+        }
+
+        .navbar-custom .nav-link {
+            color: #6C757D;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .navbar-custom .nav-link.active {
+            color: #6C757D;
+            font-weight: bold;
+        }
+
+        .navbar-custom .nav-icon {
+            color: #673AB7;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .profile-img {
+            border-radius: 50%;
+            width: 40px;
+        }
+
+        .navbar-custom .dropdown-toggle::after {
+            display: none;
+        }
+
+        .container {
+            margin-top: 30px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .desktop-preview {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .desktop-preview img {
+            width: 100%;
+            height: auto;
+        }
+
+        .group-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .group-info h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .group-info .nav {
+            margin-left: auto;
+        }
+
+        .input-area {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-area .form-control {
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            background-color: #eee;
+        }
+
+        .input-buttons {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+        }
+
+        .input-buttons button {
+            background-color: transparent;
+            border: none;
+            color: #555;
+            cursor: pointer;
+        }
+
+        button.create-btn {
+            margin-top: 165%;
+        }
+
+        .input-buttons button:hover {
+            color: #333;
+        }
+
+        .about-section {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            height: 100px;
+        }
+
+        a.nav-link {
+            color: #707070;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo">
+                    <div class="d-inline-block">
+                    </div>
+                </a>
+                <!-- Search Bar -->
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                        <span class="input-group-text bg-transparent border-0">
+                            <i class="fas fa-microphone nav-icon"></i>
+                        </span>
+                    </div>
+                </form>
+
+                <!-- Navigation Links -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-compass nav-icon"></i> Explorer
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends nav-icon"></i> Friends
+                    </a>
+                </div>
+
+                <!-- Icons (Messages, Notifications, Profile) -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-dots nav-icon"></i>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bell nav-icon"></i>
+                    </a>
+
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                            id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                            <span class="ms-2">Mary Brian</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 sidebar">
+                <h4 class="text-center mb-4">Create Group</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="groupName" class="form-label">Group name</label>
+                        <input type="text" class="form-control" id="groupName" placeholder="Enter group name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="privacy" class="form-label">Choose privacy</label>
+                        <select class="form-select" id="privacy">
+                            <option selected>Select privacy setting</option>
+                            <option value="1">Public</option>
+                            <option value="2">Private</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inviteFriends" class="form-label">Invite friends (optional)</label>
+                        <input type="text" class="form-control" id="inviteFriends" placeholder="Enter friend's name">
+                    </div>
+
+                    <button type="submit" class="create-btn">Create</button>
+                </form>
+            </div>
+            <!-- Main content -->
+            <div class="col-md-10">
+                <!-- Content -->
+                <div class="container">
+                    <!-- Desktop Preview Image -->
+                    <div class="desktop-preview">
+                        <img src="Assest/images/URBAN-~1.PNG" alt="Desktop Preview">
+                    </div>
+
+                    <!-- Group Info Section -->
+                    <div class="group-info">
+                        <div>
+                            <h3>Group name</h3>
+                            <p class="text-muted">Group privacy . 1 member</p>
+                        </div>
+                        <!-- Navigation links -->
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Members</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Events</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="input-area">
+                        <input type="text" class="form-control" placeholder="What's on your mind?">
+                        <div class="input-buttons">
+                            <button><i class="bi bi-image"></i> Photo/Video</button>
+                            <button><i class="bi bi-person"></i> Tag people</button>
+                            <button><i class="bi bi-emoji-smile"></i> Feeling/activity</button>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="about-section">
+                        <h6>About</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
