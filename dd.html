@@ -1,141 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Group Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Group List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    body {
-      background-color: #f8f9fa;
-    }
-
-    .container {
-      margin-top: 30px;
-      background-color: white;
+    .group-card {
+      border: none;
       border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 15px;
     }
 
-    .desktop-preview {
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .desktop-preview img {
-      width: 100%;
-      height: auto;
-    }
-
-    .group-info {
+    .group-icon {
+      background-color: orange;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 15px;
     }
 
-    .group-info h3 {
-      margin: 0;
-      font-size: 1.5rem;
+    .group-name {
+      font-weight: bold;
     }
 
-    .group-info .nav {
-      margin-left: auto;
+    .group-last-visited {
+      font-size: 12px;
+      color: #888;
     }
-
-    .input-area {
-      background-color: #f5f5f5;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .input-area .form-control {
-      border: none;
-      border-radius: 30px;
-      padding: 10px 20px;
-      background-color: #eee;
-    }
-
-    .input-buttons {
-      display: flex;
-      justify-content: space-around;
-      padding-top: 10px;
-    }
-
-    .input-buttons button {
-      background-color: transparent;
-      border: none;
-      color: #555;
-      cursor: pointer;
-    }
-
-    .input-buttons button:hover {
-      color: #333;
-    }
-
-    .about-section {
-      background-color: #f5f5f5;
-      border-radius: 10px;
-      padding: 20px;
-      height: 100px;
-    }
-    a.nav-link {
-    color: #707070;
-}
   </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <!-- Desktop Preview Image -->
-    <div class="desktop-preview">
-      <img src="Assest/images/URBAN-~1.PNG" alt="Desktop Preview">
-    </div>
+  <div class="container mt-5">
+    <h3>All groups you've joined (1)</h3>
 
-    <!-- Group Info Section -->
-    <div class="group-info">
-      <div>
-        <h3>Group name</h3>
-        <p class="text-muted">Group privacy . 1 member</p>
-      </div>
-      <!-- Navigation links -->
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Post</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Members</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Input Area -->
-    <div class="input-area">
-      <input type="text" class="form-control" placeholder="What's on your mind?">
-      <div class="input-buttons">
-        <button><i class="bi bi-camera"></i> Photo/Video</button>
-        <button><i class="bi bi-person"></i> Tag people</button>
-        <button><i class="bi bi-emoji-smile"></i> Feeling/activity</button>
+    <div class="card group-card">
+      <div class="d-flex align-items-center">
+        <div class="group-icon">
+          B
+        </div>
+        <div>
+          <div class="group-name">Business</div>
+          <div class="group-last-visited">you last visited 7 days ago</div>
+        </div>
+        <div class="ml-auto">
+          <button class="btn btn-primary btn-sm">View group</button>
+        </div>
       </div>
     </div>
 
-    <!-- About Section -->
-    <div class="about-section">
-      <h6>About</h6>
-    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

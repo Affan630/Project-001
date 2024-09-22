@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice IT - Memories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #F6F6F7;
+        }
+
+        .sidebar {
+            background-color: white;
+            height: 100vh;
+            padding: 20px;
+            margin-top: 0%;
+        }
+
+        .sidebar h4 {
+            font-weight: bold;
+        }
+
+        .sidebar .form-control {
+            border-radius: 25px;
+        }
+
+        .sidebar .list-group-item {
+            border: none;
+            padding: 10px 15px;
+        }
+
+        .sidebar .list-group-item.active {
+            background-color: #f8f8f8;
+            color: unset;
+        }
+
+        .group-badge {
+            background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .navbar-custom {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom .navbar-brand img {
+            width: 50px;
+        }
+
+        .navbar-custom .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 250px;
+        }
+
+        .navbar-custom .nav-link {
+            color: #6C757D;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .navbar-custom .nav-link.active {
+            color: #6C757D;
+            font-weight: bold;
+        }
+
+        .navbar-custom .nav-icon {
+            color: #673AB7;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .profile-img {
+            border-radius: 50%;
+            width: 40px;
+        }
+
+        .navbar-custom .dropdown-toggle::after {
+            display: none;
+        }
+
+        .group-card {
+            border: none;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .group-icon {
+            background-color: orange;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        .group-name {
+            font-weight: bold;
+        }
+
+        .group-last-visited {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .mt-5 {
+            margin-top: -59rem !important;
+            margin-left: 16%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo">
+                    <div class="d-inline-block">
+                    </div>
+                </a>
+                <!-- Search Bar -->
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                        <span class="input-group-text bg-transparent border-0">
+                            <i class="fas fa-microphone nav-icon"></i>
+                        </span>
+                    </div>
+                </form>
+
+                <!-- Navigation Links -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-compass nav-icon"></i> Explorer
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends nav-icon"></i> Friends
+                    </a>
+                </div>
+
+                <!-- Icons (Messages, Notifications, Profile) -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-dots nav-icon"></i>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bell nav-icon"></i>
+                    </a>
+
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                            id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                            <span class="ms-2">Mary Brian</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 sidebar">
+                <h4>Groups</h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search video">
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fas fa-newspaper"></i> Your feed</li>
+                    <li class="list-group-item"><i class="fas fa-compass"></i> Discover</li>
+                    <li class="list-group-item active"><i class="fas fa-users"></i> Your groups</li>
+                </ul>
+
+                <h6 class="mt-4">Groups you've joined</h6>
+                <div class="d-flex align-items-center mt-2">
+                    <span class="group-badge">Business</span>
+                    <div class="ml-2">
+                        <p class="mb-0">Business</p>
+                        <small class="text-muted"><i class="fas fa-globe-americas"></i> public group - 37k
+                            members</small>
+                    </div>
+                </div>
+                <a href="#" class="text-muted small mt-3 d-block text-right">See More</a>
+            </div>
+        </div>
+        <!-- Main content -->
+        <div class="container mt-5">
+            <h3>All groups you've joined (1)</h3>
+
+            <div class="card group-card">
+                <div class="d-flex align-items-center">
+                    <div class="group-icon">
+                        B
+                    </div>
+                    <div>
+                        <div class="group-name">Business</div>
+                        <div class="group-last-visited">you last visited 7 days ago</div>
+                    </div>
+                    <br>
+                    <button class="btn btn-light btn-sm">View group</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
