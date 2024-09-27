@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ads Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .ads-platform {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ads-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ads-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ads-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .ads-item .price-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .price-tag del {
+            color: #ccc;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .close-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container md-3">
+        <div class="ads-platform p-3">
+            <div class="ads-header">
+                <h5>Ads Platform</h5>
+                <button class="btn-close close-icon" aria-label="Close"></button>
+            </div>
+            <div class="ads-item">
+                <img src="https://via.placeholder.com/350x150?text=Motorbike" alt="Motorbike">
+                <div class="price-tag">
+                    $99 <del>$150</del>
+                </div>
+            </div>
+            <div class="ads-item">
+                <img src="https://via.placeholder.com/350x150?text=Handbag" alt="Handbag">
+            </div>
+            <div class="ads-item">
+                <img src="https://via.placeholder.com/350x150?text=Makeup+Kit" alt="Makeup Kit">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

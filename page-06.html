@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Navigation CSS */
+        nav {
+            background-color: white;
+            height: fit-content;
+        }
+
+        .navbar-custom {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 75px;
+        }
+
+        nav .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 300px;
+        }
+
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 6px;
+        }
+
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
+        }
+
+        /* sidebar CSS */
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .suggested ul li a,
+        .recently-viewed a {
+            text-decoration: none;
+        }
+
+        .suggested ul li a:hover,
+        .recently-viewed a:hover {
+            text-decoration: underline;
+        }
+
+        .suggested {
+            background-color: #fff;
+        }
+
+        .recently-viewed {
+            background-color: #fff;
+        }
+
+        .recently-viewed .col-4 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .recently-viewed img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        /* MAIN FEED CSS */
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #6d28d9;
+            /* Purple Border */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .story-circle .circle {
+            border-color: #6d28d9;
+        }
+
+        .story-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        input:focus {
+            box-shadow: none;
+        }
+
+        input::placeholder {
+            color: #7f7f7f;
+        }
+
+        .bg-light {
+            background-color: #e7f3f9 !important;
+        }
+
+        .bg-white {
+            background-color: white !important;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .text-primary {
+            color: #6d28d9 !important;
+            /* Purple Color */
+        }
+
+        .reels-section {
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .reel-card img {
+            border-radius: 12px;
+            object-fit: cover;
+            height: 250px;
+            width: 100%;
+        }
+
+        .reel-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reel-card .card-dots {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .reel-card .card-dots i {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .reel-card .card-dots i:hover {
+            transform: scale(1.2);
+        }
+        /* Ads Section */
+        .ads-platform {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ads-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ads-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ads-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .ads-item .price-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .price-tag del {
+            color: #ccc;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .close-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
+                </a>
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Main Links and Search Bar -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search...">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="fas fa-microphone nav-icon"></i>
+                            </span>
+                        </div>
+                    </form>
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-compass nav-icon"></i> Explorer
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends nav-icon"></i> Friends
+                    </a>
+                </div>
+                <!-- Right Side (Chat, Notifications, Profile) -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-dots nav-icon"></i>
+                    </a>
+                    <a href="#" class="nav-link" style="padding-right: 16px;">
+                        <i class="fas fa-bell nav-icon"></i>
+                    </a>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+                            data-bs-toggle="dropdown"
+                            style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
+                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                            <span class="ms-2">Mary Brian</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <!-- main content section -->
+            <div class="container mt-4">
+                <div class="row">
+                    <!-- Left Sidebar -->
+                    <div class="col-md-3">
+                        <div class="card mb-3">
+                            <div class="card-body p-3">
+                                <h5 class="card-title mb-1">Introduction</h5>
+                                <p class="card-text text-muted">Entertainer. Volunteer. Ex-cheerleader. Avid Gamer, Lana
+                                    Del
+                                    Ray's Botox
+                                    Injector.</p>
+                                <h5 class="card-title mb-1">Work Experience</h5>
+                                <p class="mb-1">Digital Designer at <strong>Nike Design</strong></p>
+                                <p>UX Designer at <strong>Super Agency</strong></p>
+                                <h5 class="card-title mb-1">Places</h5>
+                                <p class="mb-1">Born in <strong>Copenhagen, Denmark</strong></p>
+                                <p>Lives in <strong>San Francisco, USA</strong></p>
+                            </div>
+                        </div>
+                        <!-- Suggested Section -->
+                        <div class="suggested mb-4 p-3 bg-white rounded-3 shadow">
+                            <h6 class="fw-bold mb-3">Suggested</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="fas fa-rss-square me-2 "></i>
+                                    <a href="#" class="text-dark">Feeds</a>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-users me-2 "></i>
+                                    <a href="#" class="text-dark">Groups</a>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-video me-2 "></i>
+                                    <a href="#" class="text-dark">Video</a>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-clock me-2 "></i>
+                                    <a href="#" class="text-dark">Memories</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-bookmark me-2 "></i>
+                                    <a href="#" class="text-dark">Saved</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Recently Viewed Section -->
+                        <div class="recently-viewed p-3 bg-white rounded-3 shadow">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-bold">Recently Viewed</h6>
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                            <div class="row text-center">
+                                <!-- User 1 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
+                                        alt="Noah Harper">
+                                    <a href="#" class="d-block text-dark small">Noah Harper</a>
+                                </div>
+                                <!-- User 2 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
+                                        alt="Ava Monroe">
+                                    <a href="#" class="d-block text-dark small">Ava Monroe</a>
+                                </div>
+                                <!-- User 3 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-3.png" class="rounded-circle mb-1"
+                                        alt="Sophie Bennett">
+                                    <a href="#" class="d-block text-dark small">Sophie Bennett</a>
+                                </div>
+                                <!-- User 4 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-5.png" class="rounded-circle mb-1"
+                                        alt="Lucas Mitchell">
+                                    <a href="#" class="d-block text-dark small">Lucas Mitchell</a>
+                                </div>
+                                <!-- User 5 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-6.png" class="rounded-circle mb-1"
+                                        alt="Ethan Cole">
+                                    <a href="#" class="d-block text-dark small">Ethan Cole</a>
+                                </div>
+                                <!-- User 6 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-4.png" class="rounded-circle mb-1"
+                                        alt="Ella Brooks">
+                                    <a href="#" class="d-block text-dark small">Ella Brooks</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Main Feed -->
+                    <div class="col-md-6">
+                        <!-- Story Highlights Section -->
+                        <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm">
+                            <!-- Add Story Circle -->
+                            <div class="story-circle me-3">
+                                <div class="circle bg-light text-center">
+                                    <i class="fas fa-plus text-primary"></i>
+                                </div>
+                            </div>
+
+                            <!-- Existing Story Circles -->
+                            <div class="d-flex flex-nowrap">
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <i class="fas fa-play text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <i class="fas fa-play text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <i class="fas fa-play text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <i class="fas fa-play text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <img src="Assest/images/story.png" class="rounded-circle"
+                                            alt="Story Image">
+                                    </div>
+                                </div>
+                                <div class="story-circle me-2">
+                                    <div class="circle text-center">
+                                        <img src="Assest/images/story.png" class="rounded-circle"
+                                            alt="Story Image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Post Input Section -->
+                        <div class="d-flex align-items-center p-3 mt-3 bg-white rounded-3 shadow-sm">
+                            <div class="me-3">
+                                <img src="Assest/images/MaskGroup1.png" class="rounded-circle" alt="User Image">
+                            </div>
+                            <input type="text" class="form-control border-0"
+                                placeholder="Write your story today ryan...">
+                            <div class="d-flex ms-3">
+                                <i class="fas fa-microphone-alt text-primary mx-2"></i>
+                                <i class="fas fa-video text-primary mx-2"></i>
+                                <i class="fas fa-smile text-primary mx-2"></i>
+                                <i class="fas fa-user-friends text-primary mx-2"></i>
+                                <i class="fas fa-paperclip text-primary mx-2"></i>
+                            </div>
+                        </div>
+                        <!-- Posts (replicated multiple times) -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate Post for Demo -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate Post for Demo -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate Post for Demo -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Reels Section -->
+                        <div class="reels-section">
+                            <!-- Reels Header -->
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-video me-2 text-primary"></i>
+                                <h5 class="mb-0">Reels</h5>
+                            </div>
+
+                            <!-- Reels Cards -->
+                            <div class="row">
+                                <!-- Reel 1 -->
+                                <div class="col-md-4 mb-3">
+                                    <div class="reel-card">
+                                        <img src="Assest/images/reel-1.png" class="img-fluid"
+                                            alt="Reel 1">
+                                        <div class="card-dots">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reel 2 -->
+                                <div class="col-md-4 mb-3">
+                                    <div class="reel-card">
+                                        <img src="Assest/images/reel-2.png" class="img-fluid"
+                                            alt="Reel 2">
+                                        <div class="card-dots">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reel 3 -->
+                                <div class="col-md-4 mb-3">
+                                    <div class="reel-card">
+                                        <img src="Assest/images/reel-3.png" class="img-fluid"
+                                            alt="Reel 3">
+                                        <div class="card-dots">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Duplicate Post for Demo -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate Post for Demo -->
+                        <div class="card post-card mb-3">
+                            <div class="card-body p-3 d-flex">
+                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
+                                <div class="ml-3">
+                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
+                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
+                                        of
+                                        the
+                                        competition is all about leveraging the latest technology.</p>
+                                    <a href="#" class="card-link">Read More...</a>
+                                    <div class="mt-2 d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
+                                            alt="Milana Rose">
+                                        <div>
+                                            <small class="text-muted">Milana Rose</small>
+                                            <small class="text-muted">• 53 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
+                                        <div class="likes-comments">
+                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
+                                                Likes</button>
+                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
+                                                Comments</button>
+                                        </div>
+                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right sidebar -->
+                    <div class="col-md-3">
+                        <!-- Active Friends Section -->
+                        <div class="recently-viewed p-3 bg-white rounded-3 shadow">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-bold">Active Friends</h6>
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                            <div class="row text-center">
+                                <!-- User 1 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
+                                        alt="Noah Harper">
+                                    <a href="#" class="d-block text-dark small">Noah Harper</a>
+                                </div>
+                                <!-- User 2 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
+                                        alt="Ava Monroe">
+                                    <a href="#" class="d-block text-dark small">Ava Monroe</a>
+                                </div>
+                                <!-- User 3 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-4.png" class="rounded-circle mb-1"
+                                        alt="Sophie Bennett">
+                                    <a href="#" class="d-block text-dark small">Sophie Bennett</a>
+                                </div>
+                                <!-- User 4 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-6.png" class="rounded-circle mb-1"
+                                        alt="Lucas Mitchell">
+                                    <a href="#" class="d-block text-dark small">Lucas Mitchell</a>
+                                </div>
+                                <!-- User 5 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-3.png" class="rounded-circle mb-1"
+                                        alt="Ethan Cole">
+                                    <a href="#" class="d-block text-dark small">Ethan Cole</a>
+                                </div>
+                                <!-- User 6 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-5.png" class="rounded-circle mb-1"
+                                        alt="Ella Brooks">
+                                    <a href="#" class="d-block text-dark small">Ella Brooks</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Ads Section -->
+                        <div class="ads-platform p-3">
+                            <div class="ads-header">
+                                <h5>Ads Platform</h5>
+                                <button class="btn-close close-icon" aria-label="Close"></button>
+                            </div>
+                            <div class="ads-item">
+                                <img src="Assest/images/bike.png" alt="Motorbike">
+                                <div class="price-tag">
+                                    $99 <del>$150</del>
+                                </div>
+                            </div>
+                            <div class="ads-item">
+                                <img src="Assest/images/handbag.png" alt="Handbag">
+                            </div>
+                            <div class="ads-item">
+                                <img src="Assest/images/makeup.png" alt="Makeup Kit">
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Friends Suggestions -->
+                        <div class="recently-viewed p-3 bg-white rounded-3 shadow">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-bold">Active Friends</h6>
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                            <div class="row text-center">
+                                <!-- User 1 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
+                                        alt="Noah Harper">
+                                    <a href="#" class="d-block text-dark small">Noah Harper</a>
+                                </div>
+                                <!-- User 2 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
+                                        alt="Ava Monroe">
+                                    <a href="#" class="d-block text-dark small">Ava Monroe</a>
+                                </div>
+                                <!-- User 3 -->
+                                <div class="col-4 mb-3">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
+                                        alt="Sophie Bennett">
+                                    <a href="#" class="d-block text-dark small">Noah Harper</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
