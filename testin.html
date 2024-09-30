@@ -4,86 +4,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ads Platform</title>
+    <title>Post Card</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f5f5f5;
         }
 
-        .ads-platform {
+        .post-card {
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .ads-header {
+        .post-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .ads-item {
             margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .ads-item img {
+        .post-header img {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-right: 10px;
+        }
+
+        .post-header .name {
+            font-weight: bold;
+        }
+
+        .post-header .time {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .post-image {
             width: 100%;
             height: auto;
-            display: block;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .ads-item .price-tag {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
+        .post-content {
+            margin-bottom: 15px;
         }
 
-        .price-tag del {
-            color: #ccc;
-            font-size: 12px;
-            margin-left: 5px;
+        .post-content p {
+            margin-bottom: 0;
         }
 
-        .close-icon {
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .post-footer .likes-comments {
+            display: flex;
+            gap: 15px;
+        }
+        .comment-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 75%;
+            margin: auto;
+        }
+
+        .comment-header {
+            margin-bottom: 20px;
+        }
+
+        .comment-header h4 {
+            font-weight: bold;
+        }
+
+        .comment-header p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .audio-comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .audio-comment img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .audio-comment .play-button {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 15px;
+        }
+
+        .audio-comment .audio-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .audio-comment .audio-info .name {
+            font-weight: bold;
+        }
+
+        .audio-comment .audio-info .time {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+
+        .audio-comment .reaction-icons {
+            display: flex;
+            gap: 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .reaction-icons i {
             cursor: pointer;
+        }
+
+        .new-comment {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .new-comment img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .new-comment .waveform {
+            width: 100%;
+            background-color: #f0f0f0;
+            height: 40px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container md-3">
-        <div class="ads-platform p-3">
-            <div class="ads-header">
-                <h5>Ads Platform</h5>
-                <button class="btn-close close-icon" aria-label="Close"></button>
-            </div>
-            <div class="ads-item">
-                <img src="https://via.placeholder.com/350x150?text=Motorbike" alt="Motorbike">
-                <div class="price-tag">
-                    $99 <del>$150</del>
+
+    <div class="container mt-5">
+        <!-- Post Card -->
+        <div class="post-card">
+            <!-- Post Header -->
+            <div class="post-header">
+                <img src="https://via.placeholder.com/45" alt="User Profile">
+                <div>
+                    <div class="name">Milana Rose</div>
+                    <div class="time">53 minutes ago</div>
                 </div>
             </div>
-            <div class="ads-item">
-                <img src="https://via.placeholder.com/350x150?text=Handbag" alt="Handbag">
+
+            <!-- Post Image -->
+            <img src="https://via.placeholder.com/600x300?text=Post+Image" alt="Post Image" class="post-image">
+
+            <!-- Post Content -->
+            <div class="post-content">
+                <p><strong>Transform Your Business with AI-Powered Solutions!</strong></p>
+                <p>In today's fast-paced world, staying ahead of the competition is all about leveraging the latest
+                    technology...</p>
             </div>
-            <div class="ads-item">
-                <img src="https://via.placeholder.com/350x150?text=Makeup+Kit" alt="Makeup Kit">
+
+            <!-- Post Footer -->
+            <div class="post-footer">
+                <div class="likes-comments">
+                    <div><i class="fas fa-thumbs-up"></i> 192 Likes</div>
+                    <div><i class="fas fa-comment-alt"></i> 48 Comments</div>
+                </div>
+                <div class="post-options">
+                    <i class="fas fa-share"></i> Share
+                </div>
+            </div>
+            <br>
+            <br>
+            <!-- Audio Replies -->
+            <!-- <div class="audio-reply">
+                <img src="https://via.placeholder.com/40" alt="Ella Brooks">
+                <i class="fas fa-play-circle play-button"></i>
+                <div class="time">0:32</div>
+                <div>17:12</div>
+                <div class="ms-auto"><i class="fas fa-thumbs-up"></i> 192</div>
+            </div>
+
+            <div class="audio-reply">
+                <img src="https://via.placeholder.com/40" alt="Ella Brooks">
+                <i class="fas fa-play-circle play-button"></i>
+                <div class="time">0:32</div>
+                <div>17:12</div>
+                <div class="ms-auto"><i class="fas fa-thumbs-up"></i> 192</div>
+            </div>
+
+            <div class="audio-reply">
+                <img src="https://via.placeholder.com/40" alt="Ella Brooks">
+                <i class="fas fa-play-circle play-button"></i>
+                <div class="time">0:32</div>
+                <div>17:12</div>
+                <div class="ms-auto"><i class="fas fa-thumbs-up"></i> 192</div>
+            </div> -->
+
+            <!-- Audio Comment 1 -->
+            <div class="audio-comment">
+                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                <i class="fas fa-play play-button"></i>
+                <div class="audio-info">
+                    <span class="name">Ella Brooks</span>
+                    <span class="time">00:12</span>
+                </div>
+                <div class="reaction-icons">
+                    <i class="fas fa-reply"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>192 Reacts</span>
+                </div>
+            </div>
+
+            <!-- Audio Comment 2 -->
+            <div class="audio-comment">
+                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                <i class="fas fa-play play-button"></i>
+                <div class="audio-info">
+                    <span class="name">Ella Brooks</span>
+                    <span class="time">00:12</span>
+                </div>
+                <div class="reaction-icons">
+                    <i class="fas fa-reply"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>192 Reacts</span>
+                </div>
+            </div>
+
+            <!-- Audio Comment 3 -->
+            <div class="audio-comment">
+                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                <i class="fas fa-play play-button"></i>
+                <div class="audio-info">
+                    <span class="name">Ella Brooks</span>
+                    <span class="time">00:12</span>
+                </div>
+                <div class="reaction-icons">
+                    <i class="fas fa-reply"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>192 Reacts</span>
+                </div>
+            </div>
+
+            <!-- New Comment -->
+            <div class="new-comment">
+                <img src="https://via.placeholder.com/45" alt="Mary Brian">
+                <div class="waveform"></div>
             </div>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 

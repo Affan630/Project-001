@@ -10,9 +10,10 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        main ::before{
-            color: #602B90;
+        main ::before {
+            color: #8428d9;
         }
+
         /* Navigation CSS */
         nav {
             background-color: white;
@@ -131,41 +132,153 @@
             /* Purple Color */
         }
 
-        .reels-section {
+        /* post section css */
+        .post-card {
+            background-color: #fff;
+            border-radius: 10px;
             padding: 15px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .reel-card img {
-            border-radius: 12px;
-            object-fit: cover;
-            height: 250px;
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .post-header img {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-right: 10px;
+        }
+
+        .post-header .name {
+            font-weight: bold;
+        }
+
+        .post-header .time {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .post-image {
             width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .reel-card {
-            position: relative;
-            overflow: hidden;
+        .post-content {
+            margin-bottom: 15px;
         }
 
-        .reel-card .card-dots {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 18px;
+        .post-content p {
+            margin-bottom: 0;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .post-footer .likes-comments {
+            display: flex;
+            gap: 15px;
+        }
+
+        .comment-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 75%;
+            margin: auto;
+        }
+
+        .comment-header {
+            margin-bottom: 20px;
+        }
+
+        .comment-header h4 {
+            font-weight: bold;
+        }
+
+        .comment-header p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .audio-comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .audio-comment img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .audio-comment .play-button {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 15px;
+        }
+
+        .audio-comment .audio-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .audio-comment .audio-info .name {
+            font-weight: bold;
+        }
+
+        .audio-comment .audio-info .time {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+
+        .audio-comment .reaction-icons {
+            display: flex;
+            gap: 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .reaction-icons i {
             cursor: pointer;
         }
 
-        .reel-card .card-dots i {
-            transition: transform 0.2s ease-in-out;
+        .new-comment {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .reel-card .card-dots i:hover {
-            transform: scale(1.2);
+        .new-comment img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 15px;
         }
+
+        .new-comment .waveform {
+            width: 100%;
+            background-color: #f0f0f0;
+            height: 40px;
+            border-radius: 5px;
+        }
+
         /* Ads Section */
         .ads-platform {
             background-color: #fff;
@@ -200,10 +313,11 @@
             bottom: 10px;
             right: 10px;
             background-color: rgba(0, 0, 0, 0.6);
-            color: #FFD600;            ;
+            color: #FFD600;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 14px;
+
         }
 
         .price-tag del {
@@ -334,14 +448,12 @@
                             <div class="row text-center">
                                 <!-- User 1 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
-                                        alt="Noah Harper">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1" alt="Noah Harper">
                                     <a href="#" class="d-block text-dark small">Noah Harper</a>
                                 </div>
                                 <!-- User 2 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
-                                        alt="Ava Monroe">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1" alt="Ava Monroe">
                                     <a href="#" class="d-block text-dark small">Ava Monroe</a>
                                 </div>
                                 <!-- User 3 -->
@@ -358,14 +470,12 @@
                                 </div>
                                 <!-- User 5 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-6.png" class="rounded-circle mb-1"
-                                        alt="Ethan Cole">
+                                    <img src="Assest/images/home-f-6.png" class="rounded-circle mb-1" alt="Ethan Cole">
                                     <a href="#" class="d-block text-dark small">Ethan Cole</a>
                                 </div>
                                 <!-- User 6 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-4.png" class="rounded-circle mb-1"
-                                        alt="Ella Brooks">
+                                    <img src="Assest/images/home-f-4.png" class="rounded-circle mb-1" alt="Ella Brooks">
                                     <a href="#" class="d-block text-dark small">Ella Brooks</a>
                                 </div>
                             </div>
@@ -406,14 +516,12 @@
                                 </div>
                                 <div class="story-circle me-2">
                                     <div class="circle text-center">
-                                        <img src="Assest/images/story.png" class="rounded-circle"
-                                            alt="Story Image">
+                                        <img src="Assest/images/story.png" class="rounded-circle" alt="Story Image">
                                     </div>
                                 </div>
                                 <div class="story-circle me-2">
                                     <div class="circle text-center">
-                                        <img src="Assest/images/story.png" class="rounded-circle"
-                                            alt="Story Image">
+                                        <img src="Assest/images/story.png" class="rounded-circle" alt="Story Image">
                                     </div>
                                 </div>
                             </div>
@@ -433,241 +541,95 @@
                                 <i class="fas fa-paperclip text-primary mx-2"></i>
                             </div>
                         </div>
-                        <!-- Posts (replicated multiple times) -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Duplicate Post for Demo -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Duplicate Post for Demo -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Duplicate Post for Demo -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Reels Section -->
-                        <div class="reels-section">
-                            <!-- Reels Header -->
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-video me-2 text-primary"></i>
-                                <h5 class="mb-0">Reels</h5>
-                            </div>
-
-                            <!-- Reels Cards -->
-                            <div class="row">
-                                <!-- Reel 1 -->
-                                <div class="col-md-4 mb-3">
-                                    <div class="reel-card">
-                                        <img src="Assest/images/reel-1.png" class="img-fluid"
-                                            alt="Reel 1">
-                                        <div class="card-dots">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reel 2 -->
-                                <div class="col-md-4 mb-3">
-                                    <div class="reel-card">
-                                        <img src="Assest/images/reel-2.png" class="img-fluid"
-                                            alt="Reel 2">
-                                        <div class="card-dots">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Reel 3 -->
-                                <div class="col-md-4 mb-3">
-                                    <div class="reel-card">
-                                        <img src="Assest/images/reel-3.png" class="img-fluid"
-                                            alt="Reel 3">
-                                        <div class="card-dots">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <br>
-                        <!-- Duplicate Post for Demo -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
+                        <!-- Post Card -->
+                        <div class="post-card">
+                            <!-- Post Header -->
+                            <div class="post-header">
+                                <img src="https://via.placeholder.com/45" alt="User Profile">
+                                <div>
+                                    <div class="name">Milana Rose</div>
+                                    <div class="time">53 minutes ago</div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Duplicate Post for Demo -->
-                        <div class="card post-card mb-3">
-                            <div class="card-body p-3 d-flex">
-                                <img src="https://via.placeholder.com/100" class="rounded" alt="Post image">
-                                <div class="ml-3">
-                                    <h6 class="card-title mb-1">Transform Your Business with AI-Powered Solutions!</h6>
-                                    <p class="card-text text-muted">In today’s fast-paced digital world, staying ahead
-                                        of
-                                        the
-                                        competition is all about leveraging the latest technology.</p>
-                                    <a href="#" class="card-link">Read More...</a>
-                                    <div class="mt-2 d-flex align-items-center">
-                                        <img src="https://via.placeholder.com/30" class="rounded-circle mr-2"
-                                            alt="Milana Rose">
-                                        <div>
-                                            <small class="text-muted">Milana Rose</small>
-                                            <small class="text-muted">• 53 minutes ago</small>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="post-interactions mt-3 d-flex justify-content-between align-items-center">
-                                        <div class="likes-comments">
-                                            <button class="btn btn-light"><i class="fas fa-thumbs-up"></i> 152
-                                                Likes</button>
-                                            <button class="btn btn-light"><i class="fas fa-comment"></i> 46
-                                                Comments</button>
-                                        </div>
-                                        <i class="fas fa-share" style="color: #8a8d91;"></i>
-                                    </div>
+
+                            <!-- Post Image -->
+                            <img src="https://via.placeholder.com/600x300?text=Post+Image" alt="Post Image"
+                                class="post-image">
+
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <p><strong>Transform Your Business with AI-Powered Solutions!</strong></p>
+                                <p>In today's fast-paced world, staying ahead of the competition is all about leveraging
+                                    the latest
+                                    technology...</p>
+                            </div>
+
+                            <!-- Post Footer -->
+                            <div class="post-footer">
+                                <div class="likes-comments">
+                                    <div><i class="fas fa-thumbs-up"></i> 192 Likes</div>
+                                    <div><i class="fas fa-comment-alt"></i> 48 Comments</div>
                                 </div>
+                                <div class="post-options">
+                                    <i class="fas fa-share"></i> Share
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Audio Replies -->
+                            <!-- Audio Comment 1 -->
+                            <div class="audio-comment">
+                                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                                <i class="fas fa-play play-button"></i>
+                                <div class="audio-info">
+                                    <span class="name">Ella Brooks</span>
+                                    <span class="time">00:12</span>
+                                </div>
+                                <div class="reaction-icons">
+                                    <i class="fas fa-reply"></i>
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>192 Reacts</span>
+                                </div>
+                            </div>
+
+                            <!-- Audio Comment 2 -->
+                            <div class="audio-comment">
+                                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                                <i class="fas fa-play play-button"></i>
+                                <div class="audio-info">
+                                    <span class="name">Ella Brooks</span>
+                                    <span class="time">00:12</span>
+                                </div>
+                                <div class="reaction-icons">
+                                    <i class="fas fa-reply"></i>
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>192 Reacts</span>
+                                </div>
+                            </div>
+
+                            <!-- Audio Comment 3 -->
+                            <div class="audio-comment">
+                                <img src="https://via.placeholder.com/45" alt="Ella Brooks">
+                                <i class="fas fa-play play-button"></i>
+                                <div class="audio-info">
+                                    <span class="name">Ella Brooks</span>
+                                    <span class="time">00:12</span>
+                                </div>
+                                <div class="reaction-icons">
+                                    <i class="fas fa-reply"></i>
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>192 Reacts</span>
+                                </div>
+                            </div>
+
+                            <!-- New Comment -->
+                            <div class="new-comment">
+                                <img src="https://via.placeholder.com/45" alt="Mary Brian">
+                                <div class="waveform"></div>
                             </div>
                         </div>
                     </div>
@@ -682,14 +644,12 @@
                             <div class="row text-center">
                                 <!-- User 1 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
-                                        alt="Noah Harper">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1" alt="Noah Harper">
                                     <a href="#" class="d-block text-dark small">Noah Harper</a>
                                 </div>
                                 <!-- User 2 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
-                                        alt="Ava Monroe">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1" alt="Ava Monroe">
                                     <a href="#" class="d-block text-dark small">Ava Monroe</a>
                                 </div>
                                 <!-- User 3 -->
@@ -706,14 +666,12 @@
                                 </div>
                                 <!-- User 5 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-3.png" class="rounded-circle mb-1"
-                                        alt="Ethan Cole">
+                                    <img src="Assest/images/home-f-3.png" class="rounded-circle mb-1" alt="Ethan Cole">
                                     <a href="#" class="d-block text-dark small">Ethan Cole</a>
                                 </div>
                                 <!-- User 6 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-5.png" class="rounded-circle mb-1"
-                                        alt="Ella Brooks">
+                                    <img src="Assest/images/home-f-5.png" class="rounded-circle mb-1" alt="Ella Brooks">
                                     <a href="#" class="d-block text-dark small">Ella Brooks</a>
                                 </div>
                             </div>
@@ -748,14 +706,12 @@
                             <div class="row text-center">
                                 <!-- User 1 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1"
-                                        alt="Noah Harper">
+                                    <img src="Assest/images/home-f-1.png" class="rounded-circle mb-1" alt="Noah Harper">
                                     <a href="#" class="d-block text-dark small">Noah Harper</a>
                                 </div>
                                 <!-- User 2 -->
                                 <div class="col-4 mb-3">
-                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1"
-                                        alt="Ava Monroe">
+                                    <img src="Assest/images/home-f-2.png" class="rounded-circle mb-1" alt="Ava Monroe">
                                     <a href="#" class="d-block text-dark small">Ava Monroe</a>
                                 </div>
                                 <!-- User 3 -->
