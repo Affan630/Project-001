@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voice IT - Memories</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap  CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Font-Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         /* Custom CSS */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
         body {
             background-color: #F6F6F7;
-            font-family: "Poppins",sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         .sidebar {
@@ -57,6 +61,12 @@
             padding: 30px;
         }
 
+        /* Navigation CSS */
+        nav {
+            background-color: white;
+            height: fit-content;
+        }
+
         .navbar-custom {
             background-color: white;
             padding: 10px;
@@ -64,40 +74,27 @@
         }
 
         .navbar-custom .navbar-brand img {
-            width: 50px;
+            height: 75px;
         }
 
-        .navbar-custom .form-control {
+        nav .form-control {
             background-color: #F6F6F7;
             border: none;
             border-radius: 50px;
-            width: 250px;
+            width: 300px;
         }
 
-        .navbar-custom .nav-link {
-            color: #6C757D;
-            font-weight: 500;
-            margin-right: 20px;
-        }
-
-        .navbar-custom .nav-link.active {
-            color: #6C757D;
-            font-weight: bold;
-        }
-
-        .navbar-custom .nav-icon {
-            color: #673AB7;
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        .navbar-custom .profile-img {
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
             border-radius: 50%;
-            width: 40px;
+            margin: 6px;
         }
 
-        .navbar-custom .dropdown-toggle::after {
-            display: none;
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
         }
 
         .group-card {
@@ -158,28 +155,29 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <!-- Navbar -->
-        <nav class="navbar navbar-custom">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="Assest/images/logo.png" alt="Voice IT Logo">
-                    <div class="d-inline-block">
-                    </div>
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
                 </a>
-                <!-- Search Bar -->
-                <form class="d-flex">
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
-                        <span class="input-group-text bg-transparent border-0">
-                            <i class="fas fa-microphone nav-icon"></i>
-                        </span>
-                    </div>
-                </form>
-
-                <!-- Navigation Links -->
-                <div class="d-flex align-items-center">
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Main Links and Search Bar -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search...">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="fas fa-microphone nav-icon"></i>
+                            </span>
+                        </div>
+                    </form>
                     <a href="#" class="nav-link active">
                         <i class="fas fa-home nav-icon"></i> Home
                     </a>
@@ -190,24 +188,23 @@
                         <i class="fas fa-user-friends nav-icon"></i> Friends
                     </a>
                 </div>
-
-                <!-- Icons (Messages, Notifications, Profile) -->
+                <!-- Right Side (Chat, Notifications, Profile) -->
                 <div class="d-flex align-items-center">
                     <a href="#" class="nav-link">
                         <i class="fas fa-comment-dots nav-icon"></i>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="padding-right: 16px;">
                         <i class="fas fa-bell nav-icon"></i>
                     </a>
-
                     <!-- Profile Dropdown -->
                     <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                            id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+                            data-bs-toggle="dropdown"
+                            style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
                             <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
                             <span class="ms-2">Mary Brian</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Logout</a></li>
@@ -216,136 +213,150 @@
                 </div>
             </div>
         </nav>
-        <div class="row">
-            <!-- Sidebar and Main content  -->
-            <div class="col-md-2 sidebar">
-                <h4>Groups</h4>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search video">
-                </div>
-
-                <ul class="list-group">
-                    <li class="list-group-item"><i class="fas fa-newspaper"></i> Your feed</li>
-                    <li class="list-group-item"><i class="fas fa-compass"></i> Discover</li>
-                    <li class="list-group-item active"><i class="fas fa-users"></i> Your groups</li>
-                </ul>
-
-                <h6 class="mt-4">Groups you've joined</h6>
-                <div class="d-flex align-items-center mt-2">
-                    <span class="group-badge">Business</span>
-                    <div class="ml-2">
-                        <p class="mb-0">Business</p>
-                        <small class="text-muted"><i class="fas fa-globe-americas"></i> public group - 37k
-                            members</small>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Sidebar and Main content  -->
+                <div class="col-md-3 sidebar">
+                    <h4>Groups</h4>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search video">
                     </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fas fa-newspaper"></i> Your feed</li>
+                        <li class="list-group-item"><i class="fas fa-compass"></i> Discover</li>
+                        <li class="list-group-item active"><i class="fas fa-users"></i> Your groups</li>
+                    </ul>
+
+                    <h6 class="mt-4">Groups you've joined</h6>
+                    <div class="d-flex align-items-center mt-2">
+                        <span class="group-badge">Business</span>
+                        <div class="ml-2">
+                            <p class="mb-0">Business</p>
+                            <small class="text-muted"><i class="fas fa-globe-americas"></i> public group - 37k
+                                members</small>
+                        </div>
+                    </div>
+                    <a href="#" class="text-muted small mt-3 d-block text-right">See More</a>
                 </div>
-                <a href="#" class="text-muted small mt-3 d-block text-right">See More</a>
-            </div>
-            <div class="col-md-10">
-                <div class="container mt-3">
-                    <div class="row row-cols-1 row-cols-md-1 g-4">
-                        <div class="col">
-                            <div class="cards_sec">
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                <div class="col-md-9">
+                    <div class="container mt-3">
+                        <div class="row row-cols-1 row-cols-md-1 g-4">
+                            <div class="col">
+                                <div class="cards_sec">
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                                <div class="cards_sec">
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                                <div class="cards_sec">
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic1.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cards_sec">
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                                <div class="cards_sec">
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cards_sec">
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic1.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cards_sec">
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 30rem;">
-                                    <img class="card-img-top" src="Assest/images/card_pic2.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">food point</h5>
-                                        <p class="card-text">825K members 10+posts a day</p>
-                                        <a href="#" class="btn">Join group</a>
+                                    <div class="card" style="width: 30rem;">
+                                        <img class="card-img-top" src="Assest/images/card_pic2.png"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">food point</h5>
+                                            <p class="card-text">825K members 10+posts a day</p>
+                                            <a href="#" class="btn">Join group</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -355,7 +366,7 @@
             </div>
         </div>
         <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
