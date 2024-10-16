@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Layout with Profile Sidebar</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EFEFEF;
+        }
+
+        /* Navigation CSS */
+        nav {
+            background-color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom {
+            padding: 10px;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 75px;
+        }
+
+        nav .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 300px;
+        }
+
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 6px;
+        }
+
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
+        }
+        /* Main Content CSS */
+        .profile-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .profile-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .profile-card .media img {
+            border-radius: 10px;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .profile-card .links,
+        .profile-card .media {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .media {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .links p,
+        .media p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .links span,
+        .media span {
+            color: #9e9e9e;
+        }
+
+        .show-more {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .privacy-policy {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Full-height columns */
+        .vh-100 {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
+            </a>
+            <!-- Burger Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Main Links and Search Bar -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search...">
+                        <span class="input-group-text bg-transparent border-0">
+                            <i class="fas fa-microphone nav-icon"></i>
+                        </span>
+                    </div>
+                </form>
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-home nav-icon"></i> Home
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-compass nav-icon"></i> Explorer
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-user-friends nav-icon"></i> Friends
+                </a>
+            </div>
+            <!-- Right Side (Chat, Notifications, Profile) -->
+            <div class="d-flex align-items-center">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-comment-dots nav-icon"></i>
+                </a>
+                <a href="#" class="nav-link" style="padding-right: 16px;">
+                    <i class="fas fa-bell nav-icon"></i>
+                </a>
+                <!-- Profile Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+                        data-bs-toggle="dropdown"
+                        style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
+                        <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                        <span class="ms-2">Mary Brian</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container ">
+            <div class="row vh-100">
+                <!-- Left Sidebar -->
+                <div class="col-md-3 p-3">
+                    <!-- Search Bar -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Search messages">
+                    </div>
+
+                    <!-- Online Friends Section -->
+                    <p class="text-muted small mb-2">▲ Online friends</p>
+                    <div class="d-flex align-items-center p-2 mb-2 bg-light rounded">
+                        <img src="Assest/images/Story_PP.png" alt="User" class="rounded-circle mr-2">
+                        <div class="flex-grow-1">
+                            <strong>Anthony Wood</strong>
+                            <p class="mb-0 small text-muted">Hi Carolyn, can we meet...</p>
+                        </div>
+                        <span class="badge badge-danger badge-pill">6</span>
+                    </div>
+                    <div class="d-flex align-items-center p-2 mb-2 bg-light rounded">
+                        <img src="Assest/images/Story_PP.png" alt="User" class="rounded-circle mr-2">
+                        <div class="flex-grow-1">
+                            <strong>Anthony Wood</strong>
+                            <p class="mb-0 small text-muted">Hi Carolyn, can we meet...</p>
+                        </div>
+
+                    </div>
+                    <!-- Additional contacts... -->
+                    <p class="text-muted small mt-3 mb-2">▼ Offline friends</p>
+                    <!-- Additional contacts... -->
+                </div>
+
+                <!-- Main Chat Area -->
+                <div class="col-md-6 d-flex bg-white flex-column p-3 mt-2">
+                    <!-- Chat Messages Section -->
+                    <div class="flex-grow-1 overflow-auto">
+                        <!-- Left Aligned Message -->
+                        <div class="d-flex align-items-start mb-3">
+                            <img src="Assest/images/MaskGroup1.png" alt="User" class="rounded-circle mr-2">
+                            <div class="bg-light p-2 rounded">
+                                <p class="mb-0 small">Thank you for follow</p>
+                            </div>
+                        </div>
+
+                        <!-- Right Aligned Message -->
+                        <div class="d-flex align-items-start flex-row-reverse mb-3">
+                            <div class="bg-primary text-white p-2 rounded">
+                                <p class="mb-0 small">Hi Jennifer 👋</p>
+                            </div>
+                        </div>
+
+                        <!-- Additional Messages -->
+                    </div>
+
+                    <!-- Message Input Section -->
+                    <div class="mt-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Type your message...">
+                            <div class="input-group-append">
+                                <button class="btn btn-transparent" type="button"><i class="fas fa-paper-plane"></i>
+                                    <button class="btn btn-transparent" type="button">
+                                        <span><i class="fa fa-microphone"></i></span>
+                                    </button>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="col-md-3 p-3">
+                    <!-- Profile Card in Left Sidebar -->
+                    <div class="profile-card text-center">
+                        <img src="Assest/images/Jennifer Moreno.png" alt="Profile Image"
+                            class="img-fluid mx-auto d-block">
+                        <h5 class="mt-3">Jennifer Moreno</h5>
+                        <p class="text-muted">San Francisco, CA</p>
+
+                        <!-- Links, GIFs, Files -->
+                        <div class="links text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Links</p>
+                                <span>23</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Gifs</p>
+                                <span>356</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Files</p>
+                                <span>9</span>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <!-- Media Section -->
+                        <div class="media text-start mt-3">
+                            <p>Media</p>
+                            <div class="d-flex justify-content-start" style="gap: 2%;">
+                                <img src="Assest/images/msg-1.png" alt="media image">
+                                <img src="Assest/images/msg-2.png" alt="media image" class="ms-2">
+                                <img src="Assest/images/msg-3.png" alt="media image" class="ms-2">
+                            </div>
+                        </div>
+
+                        <!-- Show more button -->
+                        <div class="show-more">
+                            <a href="#" class="text-muted">Show more</a>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="privacy-policy mt-4">
+                            <p>Privacy Policy - Advertising</p>
+                            <p>Faceblock © 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap and FontAwesome -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
