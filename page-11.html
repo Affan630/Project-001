@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories Sidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #EFEFEF;
+        }
+
+        /* Navigation CSS */
+        nav {
+            background-color: white;
+            height: fit-content;
+        }
+
+        .navbar-custom {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 75px;
+        }
+
+        nav .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 300px;
+        }
+
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 6px;
+        }
+
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
+                </a>
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Main Links and Search Bar -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search...">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="fas fa-microphone nav-icon"></i>
+                            </span>
+                        </div>
+                    </form>
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-compass nav-icon"></i> Explorer
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends nav-icon"></i> Friends
+                    </a>
+                </div>
+                <!-- Right Side (Chat, Notifications, Profile) -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-dots nav-icon"></i>
+                    </a>
+                    <a href="#" class="nav-link" style="padding-right: 16px;">
+                        <i class="fas fa-bell nav-icon"></i>
+                    </a>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+                            data-bs-toggle="dropdown"
+                            style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
+                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                            <span class="ms-2">Mary Brian</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Story MAin Section area  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <!-- Sidebar Section -->
+                    <div class="d-flex flex-column bg-light p-3" style="height: 100vh;">
+                        <!-- Stories Section -->
+                        <div class="mb-4 ">
+                            <h5>Stories</h5>
+                            <div class="d-flex " style="gap: 15px;">
+                                <a href="#" class="text-primary d-block">Archive</a>
+                                <hr>
+                                <a href="#" class="text-primary d-block">Settings</a>
+                            </div>
+                        </div>
+
+                        <!-- Your Stories Section -->
+                        <div class="mb-4">
+                            <h6>Your Stories</h6>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary rounded-circle d-flex justify-content-center align-items-center"
+                                    style="width: 50px; height: 50px;">
+                                    <i class="bi bi-plus text-white"></i>
+                                </div>
+                                <span class="ms-2">Create Story</span>
+                            </div>
+                        </div>
+
+                        <!-- All Stories Section -->
+                        <div>
+                            <h6>All Stories</h6>
+                            <!-- Story Items -->
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="Assest/images/Story_PP.png" alt="Profile" class="rounded-circle"
+                                    style="width: 50px; height: 50px;">
+                                <div class="ms-2">
+                                    <span class="d-block">Anthony Wood</span>
+                                    <small class="text-muted">20h</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Story Viewer -->
+                <div class="container-fluid vh-100 d-flex justify-content-center align-items-center col-md-8">
+                    <!-- Story Card -->
+                    <div class="position-relative bg-primary text-white rounded-4"
+                        style="width: 400px; height: 600px; padding: 20px; background: linear-gradient(to bottom, #6a1b9a, #7b1fa2);">
+
+                        <!-- Story Header -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="Assest/images/Story_PP.png" class="rounded-circle me-2" alt="Profile">
+                                <div>
+                                    <strong>Anthony Wood</strong><br>
+                                    <small class="text-white-50">20h</small>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="bi bi-three-dots"></i> <!-- Options icon -->
+                            </div>
+                        </div>
+
+                        <!-- Story Content -->
+                        <div class="d-flex flex-column justify-content-center align-items-center h-75">
+                            <p class="fs-5 text-center mb-4">Hello @max_rouse we're going to the ball game!</p>
+
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button
+                            class="position-absolute start-0 top-50 translate-middle-y btn   p-3">
+                            <i class="fa fa-arrow-left text-primary"></i>
+                        </button>
+                        <button
+                            class="position-absolute end-0 top-50 translate-middle-y btn p-3">
+                            <i class="fa fa-arrow-right text-primary"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -55,7 +55,11 @@
         .content {
             padding: 30px;
         }
-
+        /* Navigation CSS */
+        nav  {
+            background-color: white;
+            height: fit-content;
+        }
         .navbar-custom {
             background-color: white;
             padding: 10px;
@@ -63,42 +67,28 @@
         }
 
         .navbar-custom .navbar-brand img {
-            width: 50px;
+            height: 75px;
         }
 
-        .navbar-custom .form-control {
+        nav .form-control {
             background-color: #F6F6F7;
             border: none;
             border-radius: 50px;
-            width: 250px;
+            width: 300px;
         }
 
-        .navbar-custom .nav-link {
-            color: #6C757D;
-            font-weight: 500;
-            margin-right: 20px;
-        }
-
-        .navbar-custom .nav-link.active {
-            color: #6C757D;
-            font-weight: bold;
-        }
-
-        .navbar-custom .nav-icon {
-            color: #673AB7;
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        .navbar-custom .profile-img {
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
             border-radius: 50%;
-            width: 40px;
+            margin: 6px;
         }
 
-        .navbar-custom .dropdown-toggle::after {
-            display: none;
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
         }
-
         .container {
             margin-top: 30px;
             background-color: white;
@@ -188,26 +178,28 @@
 
     <div class="container-fluid">
         <!-- Navbar -->
-        <nav class="navbar navbar-custom">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Navbar -->
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="Assest/images/logo.png" alt="Voice IT Logo">
-                    <div class="d-inline-block">
-                    </div>
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
                 </a>
-                <!-- Search Bar -->
-                <form class="d-flex">
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
-                        <span class="input-group-text bg-transparent border-0">
-                            <i class="fas fa-microphone nav-icon"></i>
-                        </span>
-                    </div>
-                </form>
-
-                <!-- Navigation Links -->
-                <div class="d-flex align-items-center">
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Main Links and Search Bar -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search...">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="fas fa-microphone nav-icon"></i>
+                            </span>
+                        </div>
+                    </form>
                     <a href="#" class="nav-link active">
                         <i class="fas fa-home nav-icon"></i> Home
                     </a>
@@ -218,24 +210,21 @@
                         <i class="fas fa-user-friends nav-icon"></i> Friends
                     </a>
                 </div>
-
-                <!-- Icons (Messages, Notifications, Profile) -->
+                <!-- Right Side (Chat, Notifications, Profile) -->
                 <div class="d-flex align-items-center">
                     <a href="#" class="nav-link">
                         <i class="fas fa-comment-dots nav-icon"></i>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link" style="padding-right: 16px;">
                         <i class="fas fa-bell nav-icon"></i>
                     </a>
-
                     <!-- Profile Dropdown -->
                     <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                            id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none" data-bs-toggle="dropdown" style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
                             <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
                             <span class="ms-2">Mary Brian</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Logout</a></li>

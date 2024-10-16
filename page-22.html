@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice IT - Home</title>
+
+    <!-- Bootstrap  CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Font-Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset & Common CSS */
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .btn-outline-primary {
+            --bs-btn-color: #061287;
+            --bs-btn-border-color: #061287;
+            --bs-btn-hover-bg: #061287;
+            --bs-btn-hover-border-color: #061287;
+            --bs-btn-active-bg: #061287;
+            --bs-btn-active-border-color: #061287;
+            --bs-btn-disabled-color: #061287;
+            --bs-btn-disabled-border-color: #061287;
+        }
+
+        body {
+            background-color: #F6F6F7;
+        }
+
+        /* Navigation CSS */
+        nav {
+            background-color: white;
+            height: fit-content;
+        }
+
+        .navbar-custom {
+            background-color: white;
+            padding: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 75px;
+        }
+
+        nav .form-control {
+            background-color: #F6F6F7;
+            border: none;
+            border-radius: 50px;
+            width: 300px;
+        }
+
+        .nav-icon {
+            background-color: #602B90;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 6px;
+        }
+
+        nav .profile-img {
+            border-radius: 50%;
+            height: 50px;
+        }
+
+        /* Main CSS */
+        .profile-cover-container {
+            background-image: url('Assest/images/Cover & Bg.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .profile-info {
+            position: relative;
+            bottom: -25vh;
+            left: 0;
+        }
+
+        .tab-nav {
+            margin-top: 30vh;
+        }
+
+        .tab-nav .nav-underline {
+            --bs-nav-underline-gap: 3rem;
+            --bs-nav-underline-border-width: 0.25rem;
+        }
+
+        .tab-nav .nav-underline .nav-link.active,
+        .tab-nav .nav-underline .show>.nav-link {
+            color: #061287;
+        }
+
+        .tab-nav .nav-underline .nav-link {
+            color: #596172;
+        }
+
+        /* Main Section Css */
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .friend-card {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .friend-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .friend-card p {
+            margin-top: 10px;
+        }
+
+        .custom-btn {
+            background-color: #6f42c1;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        .nav-link {
+            font-weight: bold;
+        }
+
+        main.nav-link.active {
+            color: #6f42c1;
+            border-bottom: 2px solid #6f42c1;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .friend-card {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .friend-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .friend-card p {
+            margin-top: 10px;
+        }
+
+        .custom-btn {
+            background-color: #6f42c1;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        /* Nav for Friends Section */
+        .friends-nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: flex-end;
+        }
+
+        .friends-nav a {
+            text-decoration: none;
+            color: #6c757d;
+            padding: 10px 15px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .friends-nav a.active {
+            color: #6f42c1;
+            border-bottom: 3px solid #6f42c1;
+        }
+
+        /* Scrollable Friends List */
+        .scrollable-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .scrollable-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scrollable-container::-webkit-scrollbar-thumb {
+            background-color: #6f42c1;
+            border-radius: 10px;
+        }
+
+        .friend-card {
+            display: inline-block;
+            text-align: center;
+            width: 120px;
+        }
+
+        .custom-bg {
+            background-color: white;
+            margin: 10px;
+        }
+
+        /* Styling for the card layout */
+        .photo-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .photo-card img {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .photo-card .edit-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-custom navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
+                </a>
+                <!-- Burger Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Main Links and Search Bar -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search...">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="fas fa-microphone nav-icon"></i>
+                            </span>
+                        </div>
+                    </form>
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-home nav-icon"></i> Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-compass nav-icon"></i> Explorer
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends nav-icon"></i> Friends
+                    </a>
+                </div>
+                <!-- Right Side (Chat, Notifications, Profile) -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment-dots nav-icon"></i>
+                    </a>
+                    <a href="#" class="nav-link" style="padding-right: 16px;">
+                        <i class="fas fa-bell nav-icon"></i>
+                    </a>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+                            data-bs-toggle="dropdown"
+                            style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
+                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+                            <span class="ms-2">Mary Brian</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <!-- Profile Cover Section -->
+            <div class="container-fluid profile-cover-container row m-auto">
+                <!-- Profile Info Section -->
+                <div class="profile-info col-12">
+                    <div class="d-flex flex-column text-center">
+                        <!-- Replace with actual profile picture -->
+                        <img src="Assest/images/Avatar@2x.png" alt="Profile Picture" class="mx-auto w-25">
+                        <h2>Mary Brian</h2>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <button class="btn btn-outline-primary">
+                            Send Message <i class="bi bi-telegram"></i><!-- Icon -->
+                        </button>
+                        <button class="btn btn-outline-primary active">
+                            Following <i class="ms-3 bi bi-circle-fill"></i><!-- Icon -->
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Header Section -->
+                <!-- <div class="profile-header col-12">
+                    <img src="Assets/images/Cover.png" class="w-100" alt="">
+                </div> -->
+
+            </div>
+            <!-- Tabs Navigation -->
+            <nav class="tab-nav">
+                <ul class="nav nav-underline justify-content-center pt-4">
+                    <li class="nav-item"><a class="nav-link" href="#" class="active">Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Friends</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-three-dots"></i></a></li>
+                </ul>
+            </nav>
+            <!-- main content section -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-lg-3 custom-bg">
+                            <div class="section-title"><strong class="h3">About</strong></div>
+                            <ul class="list-unstyled">
+                                <li>Overview</li>
+
+                                <li>Work and education</li>
+                                <li>Places lived</li>
+                                <li>Contact and basic info</li>
+                                <li>Family and relationships</li>
+                                <li>Details about you</li>
+                                <li>Life events</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-7 custom-bg">
+                            <ul class="list-unstyled ">
+                                <br>
+                                <li><i class="bi bi-plus-circle"></i> Add a workplace</li>
+                                <li><i class="bi bi-plus-circle"></i> Add secondary school</li>
+                                <li><i class="bi bi-plus-circle"></i> Add university</li>
+                                <li><i class="bi bi-plus-circle"></i> Add current city</li>
+                                <li><i class="bi bi-plus-circle"></i> Add home town</li>
+                                <li><i class="bi bi-plus-circle"></i> Add a relationship status</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container mt-5 custom-bg">
+                        <!-- Friends Section -->
+                        <div class="section-title h3">Friends</div>
+                        <!-- Navigation Tabs -->
+                        <div class="friends-nav">
+
+                            <a href="#" class="active">Following</a>
+                            <a href="#">Friend requests</a>
+                            <a href="#">Find friends</a>
+                        </div>
+                        <!-- Scrollable Friends List -->
+                        <div class="scrollable-container">
+                            <!-- Friend Cards -->
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 1">
+                                <p>Adam Levine</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 2">
+                                <p>Cristiano Ronaldo</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 3">
+                                <p>Dwayne Johnson</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 4">
+                                <p>Adam Levine</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 5">
+                                <p>Cristiano Ronaldo</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 6">
+                                <p>Dwayne Johnson</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 5">
+                                <p>Cristiano Ronaldo</p>
+                            </div>
+                            <div class="friend-card">
+                                <img src="Assest/images/daywen (1).png" alt="Friend 6">
+                                <p>Dwayne Johnson</p>
+                            </div>
+                        </div>
+                        <!-- See More Button -->
+                        <div class="d-grid gap-2">
+                            <button class="custom-btn btn btn-full">See More</button>
+                        </div>
+                    </div>
+                    <div class="container mt-4 custom-bg">
+                        <!-- Navigation Tabs -->
+                        <div class="section-title h3">
+                            Photos
+                        </div>
+                        <div class="friends-nav">   
+                            <a href="#" class="active">Photos</a>
+                            <a href="#">Album</a>
+                            <a href="#">Photos/Videos</a>
+                        </div>
+                        <!-- Photo Cards Section -->
+                        <div class="container">
+                            <div class="row">
+                                <!-- Photo card 1 -->
+                                <div class="col-md-2">
+                                    <div class="photo-card">
+                                        <img src="Assest/images/marry brain.png" alt="Photo 1">
+                                        <div class="edit-icon">
+                                            <i class="bi bi-pen"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Repeat the same structure for other photo cards -->
+                                <div class="col-md-2">
+                                    <div class="photo-card">
+                                        <img src="Assest/images/marry brain.png" alt="Photo 2">
+                                        <div class="edit-icon">
+                                            <i class="bi bi-pen"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="photo-card">
+                                        <img src="Assest/images/marry brain.png" alt="Photo 3">
+                                        <div class="edit-icon">
+                                            <i class="bi bi-pen"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="photo-card">
+                                        <img src="Assest/images/marry brain.png" alt="Photo 4">
+                                        <div class="edit-icon">
+                                            <i class="bi bi-pen"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="photo-card">
+                                        <img src="Assest/images/marry brain.png" alt="Photo 5">
+                                        <div class="edit-icon">
+                                            <i class="bi bi-pen"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
