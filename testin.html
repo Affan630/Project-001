@@ -4,203 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
-    <!-- Bootstrap  CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Category Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #F6F6F7;
+        .category-card {
+            background-color: #f1f1f1;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #000;
         }
 
-        /* Navigation CSS */
-        nav {
-            background-color: white;
-            height: fit-content;
+        .trending {
+            color: #ff3b30;
+            background-color: #ffebeb;
         }
 
-        .navbar-custom {
-            background-color: white;
-            padding: 10px;
-            border-bottom: 2px solid #eaeaea;
+        .music {
+            color: #9b51e0;
+            background-color: #f9ebff;
         }
 
-        .navbar-custom .navbar-brand img {
-            height: 75px;
+        .learn {
+            color: #f2c94c;
+            background-color: #fffae6;
         }
 
-        nav .form-control {
-            background-color: #F6F6F7;
-            border: none;
-            border-radius: 50px;
-            width: 300px;
+        .games {
+            color: #27ae60;
+            background-color: #e6fff2;
         }
 
-        .nav-icon {
-            background-color: #602B90;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            margin: 6px;
+        .sports {
+            color: #2d9cdb;
+            background-color: #e6f6ff;
         }
 
-        nav .profile-img {
-            border-radius: 50%;
-            height: 50px;
-        }
-
-        /* Sidebar CSS */
-        .sidebar {
-            background-color: white;
-            height: 100vh;
-            padding: 20px;
-            margin-top: 0%;
-        }
-
-        .sidebar h4 {
-            font-weight: bold;
-        }
-
-        a.nav-link {
-            color: black;
-        }
-
-        a.side.active {
-            background: #F8F8F8;
-            color: black;
+        .fashion {
+            color: #f2994a;
+            background-color: #fff4e6;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-custom navbar-expand-lg">
-            <div class="container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#">
-                    <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
-                </a>
-                <!-- Burger Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Main Links and Search Bar -->
-                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
-                    <form class="d-flex">
-                        <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Search...">
-                            <span class="input-group-text bg-transparent border-0">
-                                <i class="fas fa-microphone nav-icon"></i>
-                            </span>
-                        </div>
-                    </form>
-                    <a href="#" class="nav-link active">
-                        <i class="fas fa-home nav-icon"></i> Home
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-compass nav-icon"></i> Explorer
-                    </a>
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-user-friends nav-icon"></i> Friends
-                    </a>
-                </div>
-                <!-- Right Side (Chat, Notifications, Profile) -->
-                <div class="d-flex align-items-center">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-comment-dots nav-icon"></i>
-                    </a>
-                    <a href="#" class="nav-link" style="padding-right: 16px;">
-                        <i class="fas fa-bell nav-icon"></i>
-                    </a>
-                    <!-- Profile Dropdown -->
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
-                            data-bs-toggle="dropdown"
-                            style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
-                            <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
-                            <span class="ms-2">Mary Brian</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                    </div>
+
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card trending d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-graph-up"></i>
+                    </span>
+                    Trending
                 </div>
             </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <!-- Sidebar -->
-                <div class="col-md-3 sidebar">
-                    <h4 class="bold" style="text-transform: capitalize;">Videos</h4>
-                    <ul class="nav flex-column ">
-                        <li class="nav-item ">
-                            <a class="side nav-link active" href="#"><img src="Assest/images/feed-logo3.png" alt=""
-                                    style="width: 10%;"> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#"><img src="Assest/images/feed-logo4.png" alt=""
-                                    style="width: 10%;"> Friends</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#"><img src="Assest/images/feed-logo2.png" alt=""
-                                    style="width: 10%;"> Favorites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="#"><img src="Assest/images/feed-logo1.png" alt=""
-                                    style="width: 10%;"> Groups</a>
-                        </li>
-                    </ul>
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card music d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-music-note"></i>
+                    </span>
+                    Music
                 </div>
-
-                <div class="container mt-5 col-md-6">
-                    <div class="card shadow-sm rounded">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="Assest/images/lion-profile.png" class="profile-img me-3" alt="Profile">
-                                <div>
-                                    <h6 class="m-0">Ava Monroe</h6>
-                                    <small class="text-muted">New York · 3d ago</small>
-                                </div>
-                            </div>
-
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-                            <img src="Assest/images/videos-card-pic.png" class="img-fluid rounded mb-3" alt="Duck">
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">27K Views</small>
-                                <div class="interaction-icons">
-                                    <i class="fas fa-comment me-3"></i> 65
-                                    <i class="fas fa-heart ms-4 me-3"></i> 65K
-                                    <i class="fas fa-share ms-4 me-3"></i> 236
-                                    <i class="fas fa-bookmark ms-4"></i> 142
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="input-group">
-                                <img src="Assest/images/marry brain.png" class="profile-img me-2 rounded-circle"
-                                    alt="User" style="width: 10%;">
-                                <input type="text" class="form-control rounded" placeholder="Add a comment...">
-                                <button class="btn " type="button"><i class="fa-regular fa-face-grin-beam"></i></button>
-                                <button class="btn" type="button"><i class="fa fa-microphone"></i></button>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card learn d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-lightbulb"></i>
+                    </span>
+                    Learn
                 </div>
-
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card games d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-controller"></i>
+                    </span>
+                    Games
+                </div>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card sports d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-trophy"></i>
+                    </span>
+                    Sports
+                </div>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <div class="category-card fashion d-flex align-items-center justify-content-center">
+                    <span class="me-2">
+                        <i class="bi bi-person"></i>
+                    </span>
+                    Fashion
+                </div>
             </div>
         </div>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

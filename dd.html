@@ -4,125 +4,421 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Cards</title>
+  <title>Feed</title>
   <!-- Bootstrap  CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
-    rel="stylesheet">
-  <!-- Font-Awesome Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Styling for the card layout */
-    .photo-card {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
+    body {
+      background-color: #F6F6F7;
+    }
+
+    /* Navigation CSS */
+    nav {
+      background-color: white;
+      height: fit-content;
+    }
+
+    .navbar-custom {
+      background-color: white;
+      padding: 10px;
+      border-bottom: 2px solid #eaeaea;
+    }
+
+    .navbar-custom .navbar-brand img {
+      height: 75px;
+    }
+
+    nav .form-control {
+      background-color: #F6F6F7;
+      border: none;
+      border-radius: 50px;
+      width: 300px;
+    }
+
+    .nav-icon {
+      background-color: #602B90;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      margin: 6px;
+    }
+
+    nav .profile-img {
+      border-radius: 50%;
+      height: 50px;
+    }
+
+    /* Sidebar CSS */
+    .sidebar {
+      background-color: white;
+      height: 100vh;
+      padding: 20px;
+      margin-top: 0%;
+    }
+
+    .sidebar h4 {
+      font-weight: bold;
+    }
+
+    a.nav-link {
+      color: black;
+    }
+
+    a.side.active {
+      background: #F8F8F8;
+      color: black;
+    }
+
+    /* Main Section CSS */
+    .video-section {
+      /* background-color: white; */
+      position: relative;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .video-player {
+      background-image: url('Assest/images/video_ban.png');
+      /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      border-radius: 5px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
     }
 
-    .photo-card img {
+    .icon-section {
+      background-color: white;
+    }
+
+    .pause-icon {
+      font-size: 30px;
+      background-color: #ff4b4b;
+      border-radius: 50%;
+      padding: 10px;
+      color: white;
+    }
+
+    .live-status {
+      color: red;
+      font-weight: bold;
+    }
+
+    .comments-section {
+      background-color: white;
+      border-left: 1px solid #e9e9e9;
+      padding: 15px;
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    .comment-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .comment-box img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .comment-content {
       border-radius: 10px;
+      padding: 10px;
       width: 100%;
     }
 
-    .photo-card .edit-icon {
+    .input-section {
+      position: relative;
+    }
+
+    .input-section input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+    }
+
+    .input-section .mic-icon {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .icon-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 10px;
+    }
+
+    .icon-section .like-icon,
+    .icon-section .comment-icon {
+      color: #6c757d;
+    }
+
+    .icon-section .like-count,
+    .icon-section .comment-count {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    /* Live Section Card Styling */
+    .live-card img {
+      border-radius: 5px;
+      object-fit: cover;
+      height: 150px;
+      width: 100%;
+    }
+
+    .live-card-body {
+      padding: 10px;
+    }
+
+    .live-badge {
       position: absolute;
       top: 10px;
       right: 10px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .view-count {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #d754e0;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      padding: 5px;
     }
 
-    /* Navbar styling */
-    .custom-nav {
-      display: flex;
-      border-bottom: 1px solid #dee2e6;
-      margin-bottom: 20px;
+    .card-title {
+      font-size: 16px;
+      margin-bottom: 0;
     }
 
-    .custom-nav a {
-      padding: 10px 15px;
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-    }
-
-    .custom-nav a.active {
-      color: purple;
-      border-bottom: 2px solid purple;
-    }
-
-    .custom-nav a:hover {
-      color: purple;
+    .card-text {
+      font-size: 14px;
+      color: #6c757d;
     }
   </style>
 </head>
 
 <body>
-  <div class="container mt-4">
-    <!-- Custom Navigation Bar -->
-    <div class="custom-nav">
-      <a href="#" class="active">Your Video</a>
-      <a href="#">Albums</a>
-      <a href="#">Add Photo/Video</a>
-    </div>
+  <div class="container">
+    <!-- Navbar and Sidebar remain unchanged -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom navbar-expand-lg">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="Assest/images/logo.png" alt="Voice IT Logo" class="logo-img">
+        </a>
+        <!-- Burger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Main Links and Search Bar -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+          <form class="d-flex">
+            <div class="input-group">
+              <input class="form-control" type="search" placeholder="Search...">
+              <span class="input-group-text bg-transparent border-0">
+                <i class="fas fa-microphone nav-icon"></i>
+              </span>
+            </div>
+          </form>
+          <a href="#" class="nav-link active">
+            <i class="fas fa-home nav-icon"></i> Home
+          </a>
+          <a href="#" class="nav-link">
+            <i class="fas fa-compass nav-icon"></i> Explorer
+          </a>
+          <a href="#" class="nav-link">
+            <i class="fas fa-user-friends nav-icon"></i> Friends
+          </a>
+        </div>
+        <!-- Right Side (Chat, Notifications, Profile) -->
+        <div class="d-flex align-items-center">
+          <a href="#" class="nav-link">
+            <i class="fas fa-comment-dots nav-icon"></i>
+          </a>
+          <a href="#" class="nav-link" style="padding-right: 16px;">
+            <i class="fas fa-bell nav-icon"></i>
+          </a>
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none" data-bs-toggle="dropdown"
+              style="color: #364045; border-left: 1px solid #364045;padding-left: 16px;">
+              <img src="Assest/images/Avatar@2x.png" alt="Profile" class="profile-img">
+              <span class="ms-2">Mary Brian</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-2 sidebar">
+        <h4 class="bold" style="text-transform: capitalize;">Videos</h4>
+        <ul class="nav flex-column ">
+          <li class="nav-item ">
+            <a class="side nav-link " href="#"><img src="Assest/images/feed-logo3.png" alt="" style="width: 10%;">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="side nav-link active" href="#"><img src="Assest/images/feed-logo4.png" alt="" style="width: 10%;">
+              Live</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#"><img src="Assest/images/feed-logo2.png" alt="" style="width: 10%;"> Reel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#"><img src="Assest/images/feed-logo1.png" alt="" style="width: 10%;">
+              Explore</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Video Section -->
+      <div class="row mt-3">
+        <div class="col-md-7 video-section">
+          <div class="video-player">
+            <i class="fas fa-pause pause-icon"></i>
+          </div>
+          <div class="icon-section">
+            <div class="d-flex align-items-center">
+              <i class="far fa-comment comment-icon"></i>
+              <span class="comment-count ms-2">65 Comments</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="far fa-heart like-icon"></i>
+              <span class="like-count ms-2">65K Likes</span>
+            </div>
+            <div class="live-status">Live</div>
+          </div>
 
-    <!-- Photo Cards Section -->
-    <div class="container">
-      <div class="row">
-        <!-- Photo card 1 -->
-        <div class="col-md-2">
-          <div class="photo-card">
-            <img src="Assest/images/marry brain.png" alt="Photo 1">
-            <div class="edit-icon">
-              <i class="bi bi-pen"></i>
+          <!-- Live Cards Section (New Addition) -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <h4>Live</h4>
+            </div>
+            <!-- Live Card 1 -->
+            <div class="col-md-4 mb-3">
+              <div class="card live-card" style="border: none;">
+                <div class="position-relative">
+                  <img src="https://via.placeholder.com/400x150" class="card-img-top" alt="Live Stream">
+                  <span class="live-badge">LIVE</span>
+                  <span class="view-count">625.5</span>
+                </div>
+                <div class="live-card-body d-flex align-items-center">
+                  <img src="https://via.placeholder.com/50" class="avatar me-3" alt="Avatar">
+                  <div>
+                    <h5 class="card-title">namesurname</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Live Card 2 -->
+            <div class="col-md-4 mb-3">
+              <div class="card live-card" style="border: none;">
+                <div class="position-relative">
+                  <img src="https://via.placeholder.com/400x150" class="card-img-top" alt="Live Stream">
+                  <span class="live-badge">LIVE</span>
+                  <span class="view-count">625.5</span>
+                </div>
+                <div class="live-card-body d-flex align-items-center">
+                  <img src="https://via.placeholder.com/50" class="avatar me-3" alt="Avatar">
+                  <div>
+                    <h5 class="card-title">namesurname</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Card 3 -->
+            <div class="col-md-4 mb-3">
+              <div class="card live-card" style="border: none;">
+                <div class="position-relative">
+                  <img src="https://via.placeholder.com/400x150" class="card-img-top" alt="Live Stream">
+                  <span class="live-badge">LIVE</span>
+                  <span class="view-count">625.5</span>
+                </div>
+                <div class="live-card-body d-flex align-items-center">
+                  <img src="https://via.placeholder.com/50" class="avatar me-3" alt="Avatar">
+                  <div>
+                    <h5 class="card-title">namesurname</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Repeat the same structure for other photo cards -->
-        <div class="col-md-2">
-          <div class="photo-card">
-            <img src="Assest/images/marry brain.png" alt="Photo 2">
-            <div class="edit-icon">
-              <i class="bi bi-pen"></i>
+        <!-- Comments Section (remains the same) -->
+        <div class="col-md-3 comments-section">
+          <!-- Comment Content -->
+          <!-- Comment 1 -->
+          <div class="comment-box">
+            <img src="Assest/images/video_pp.png" alt="User">
+            <div class="comment-content">
+              <p><strong>namesurname</strong> <small>1 hr</small></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="photo-card">
-            <img src="Assest/images/marry brain.png" alt="Photo 3">
-            <div class="edit-icon">
-              <i class="bi bi-pen"></i>
+          <!-- Comment 2 (Duplicate this for multiple comments) -->
+          <div class="comment-box">
+            <img src="Assest/images/video_pp.png" alt="User">
+            <div class="comment-content">
+              <p><strong>namesurname</strong> <small>1 hr</small></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="photo-card">
-            <img src="Assest/images/marry brain.png" alt="Photo 4">
-            <div class="edit-icon">
-              <i class="bi bi-pen"></i>
+          <!-- Comment 3 (Duplicate this for multiple comments) -->
+          <div class="comment-box">
+            <img src="Assest/images/video_pp.png" alt="User">
+            <div class="comment-content">
+              <p><strong>namesurname</strong> <small>1 hr</small></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="photo-card">
-            <img src="Assest/images/marry brain.png" alt="Photo 5">
-            <div class="edit-icon">
-              <i class="bi bi-pen"></i>
-            </div>
+          <!-- More comments ... -->
+          <!-- Input Section -->
+          <div class="input-section mt-3">
+            <input type="text" placeholder="Add a comment..." class="form-control">
+            <i class="fas fa-microphone mic-icon"></i>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
